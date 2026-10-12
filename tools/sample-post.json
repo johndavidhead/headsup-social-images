@@ -1,0 +1,54 @@
+{
+ "topic": "Weekend",
+ "source_name": "Northeastern Global News, October 9, 2026",
+ "carousel": [
+  {
+   "slide": 1,
+   "role": "Cover",
+   "tag": "WEEKEND",
+   "headline": "Boston's rats have a vocabulary. AI is writing the dictionary.",
+   "body": ""
+  },
+  {
+   "slide": 2,
+   "role": "How",
+   "tag": "",
+   "headline": "Brick-sized ultrasonic microphones",
+   "body": "Boston and the nonprofit Basis recorded about 200 days of audio on trees and fences."
+  },
+  {
+   "slide": 3,
+   "role": "The data",
+   "tag": "",
+   "headline": "1.2 million rat calls",
+   "body": "AI filtered out human noise and matched the calls to thermal and video footage."
+  },
+  {
+   "slide": 4,
+   "role": "The dictionary",
+   "tag": "",
+   "headline": "Three main calls",
+   "body": "A high-pitched alarm, an aggressive squeak, and a friendly 50 kHz call for mates and playmates."
+  },
+  {
+   "slide": 5,
+   "role": "My take",
+   "tag": "MY TAKE",
+   "headline": "Chicago should borrow this",
+   "body": "We held Orkin's rattiest-city title for ten straight years before Los Angeles took it last fall."
+  },
+  {
+   "slide": 6,
+   "role": "Close",
+   "tag": "",
+   "headline": "Strangest problem you have seen AI help with?",
+   "body": "Head's Up: John's take on enterprise AI and quantum. Subscribe on LinkedIn."
+  }
+ ],
+ "single_image": {
+  "tag": "WEEKEND",
+  "headline": "Boston's rats have a vocabulary. AI is writing the dictionary.",
+  "sub": "Source: Northeastern Global News, Oct 9, 2026"
+ },
+ "scribble": "no rats were harmed"
+}
