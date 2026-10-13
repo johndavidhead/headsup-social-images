@@ -25,10 +25,12 @@ def nice(d):
         return d
 
 prof = data["profile_url"]
+content = json.load(open(os.path.join(ROOT, "data", "content.json")))
+# A daily tile with no url links to the LinkedIn post published from that social day, else the profile.
+by_day = {i["source_social_date"]: i["url"] for i in content["items"] if i["type"] == "post" and i.get("source_social_date")}
 posts = sorted(data["posts"], key=lambda p: p["date"], reverse=True)
 for p in posts:
-    p["date_iso"] = p["date"]; p["date"] = nice(p["date"]); p["url"] = p.get("url") or prof
-content = json.load(open(os.path.join(ROOT, "data", "content.json")))
+    p["date_iso"] = p["date"]; p["url"] = p.get("url") or by_day.get(p["date"]) or prof; p["date"] = nice(p["date"])
 nlw = content["newsletters"][0]
 eds = [i for i in content["items"] if i["type"] == "newsletter_edition" and i.get("newsletter_id") == nlw["id"]]
 def card(i, **extra):

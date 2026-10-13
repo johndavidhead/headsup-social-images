@@ -58,15 +58,19 @@ Images live in the repo because LinkedIn's CDN image URLs are signed and expire.
 | `issue_no` | `"01"`, `"02"` ... for issues, `null` for articles |
 | `newsletter_id` | Which newsletter it belongs to |
 
-## Post fields (reserved for when posts are added)
+## Post fields
 
 | Field | Contents |
 |---|---|
-| `activity_urn` | `urn:li:activity:<id>` |
-| `post_kind` | `text`, `image`, `carousel`, `video`, `article_share`, `repost` |
-| `links` | Outside URLs in the post or first comment |
-| `source_social_date` | The Head's Up social day (`YYYY-MM-DD`) when the post came from that pipeline, so it joins to the review page and the social ledger |
-| `metrics` | `{reactions, comments, reposts, impressions, as_of}` when known |
+| `activity_urn` | `urn:li:activity:<id>`. The id also encodes the post time |
+| `post_kind` | `carousel` (document post), `image`, `article_share` (outside link with preview), `text`, `video` |
+| `published_at` | UTC timestamp. `published_date` is the Chicago date |
+| `links` | Outside URLs the post shares |
+| `link_preview` | `{title, source}` of the shared link card, or `null` |
+| `source_social_date` | The Head's Up social day (`YYYY-MM-DD`) when the post came from that pipeline. Its `images` then point at that day's carousel PNGs in this repo instead of a copy |
+| `metrics` | `{reactions, comments, reposts, impressions, as_of}` at scrape time |
+
+Reposts (with or without commentary) and shares of John's own newsletter editions are not stored as posts.
 
 ## Image record
 
@@ -82,3 +86,7 @@ Images live in the repo because LinkedIn's CDN image URLs are signed and expire.
 ## Refreshing newsletter editions
 
 LinkedIn's image CDN is not reachable from the cloud, so images come through John's logged-in Mac Chrome: scrape each edition (title, date, text, cover), download the covers as `headsup-cover-<slug>.jpg` plus a `headsup-newsletter-meta.json` list of `{slug, url, title, date ("September 17, 2026"), text, coverAlt, cover_cdn_path}`, then run `python3 tools/content_db.py import-newsletter <meta.json> <covers_dir>`. Upserts by `id`, so re-running is safe.
+
+## Refreshing posts
+
+From John's logged-in Mac Chrome, read `/voyager/api/identity/profileUpdatesV2?q=memberShareFeed` for his profile, download each post's images as `headsup-post-<activity id>-<role>.jpg` plus `headsup-posts-meta.json` (`{scraped_at, posts: [{activity_id, iso, kind, text, doc_title, link, metrics, images: [{role, width, height, alt, cdn_path, file}]}]}`), then run `python3 tools/content_db.py import-posts <meta.json> <images_dir>`. Upserts by `id`, so re-running refreshes metrics.

@@ -7,6 +7,8 @@ Images are stored in this repo because LinkedIn's signed CDN image URLs expire.
 usage:
   python3 tools/content_db.py import-newsletter <meta.json> <covers_dir>
       Upsert newsletter editions scraped from LinkedIn (see data/README.md for the format).
+  python3 tools/content_db.py import-posts <meta.json> <images_dir>
+      Upsert feed posts scraped from John's activity feed. Reposts and newsletter shares are skipped.
   python3 tools/content_db.py validate
       Check every record against the rules in data/README.md and that every file exists.
   python3 tools/content_db.py list [type]
@@ -139,6 +141,96 @@ def import_newsletter(meta_path, covers_dir):
     save(db)
 
 
+def repo_image_record(rel, role, alt=""):
+    """Image record for a file already in the repo (e.g. a Head's Up carousel slide)."""
+    from PIL import Image
+    full = os.path.join(ROOT, rel)
+    data = open(full, "rb").read()
+    w, h = Image.open(full).size
+    return {"role": role, "alt": alt, "width": w, "height": h, "bytes": len(data),
+            "sha256": hashlib.sha256(data).hexdigest(), "path": rel, "url": RAW + rel,
+            "web_path": rel, "web_url": RAW + rel, "web_width": w, "web_height": h, "source_cdn_path": ""}
+
+
+def social_carousel(day):
+    """Newest render of a Head's Up carousel for a social day, as repo paths in slide order."""
+    import glob
+    for d in sorted(glob.glob(os.path.join(ROOT, f"{day}-*"))):
+        files = sorted(glob.glob(os.path.join(d, "*-carousel-[0-9].png")))
+        if files:
+            prefixes = sorted({os.path.basename(f).rsplit("-carousel-", 1)[0] for f in files})
+            newest = [f for f in files if os.path.basename(f).startswith(prefixes[-1] + "-carousel-")]
+            return [os.path.relpath(f, ROOT) for f in newest]
+    return []
+
+
+def title_of(text, limit=110):
+    first = text.strip().split("\n")[0]
+    m = re.match(r"(.+?[.?!])(\s|$)", first)
+    t = m.group(1) if m else first
+    return t if len(t) <= limit else t[:limit].rsplit(" ", 1)[0] + "..."
+
+
+def import_posts(meta_path, images_dir):
+    """Upsert LinkedIn feed posts scraped from John's activity feed (see data/README.md)."""
+    from zoneinfo import ZoneInfo
+    db = load()
+    meta = json.load(open(meta_path))
+    stamp = now_iso()
+    for p in meta["posts"]:
+        if p["kind"] in ("repost", "newsletter_share"):
+            continue
+        act = p["activity_id"]
+        iid = f"li-post-{act}"
+        at = datetime.datetime.fromisoformat(p["iso"].replace("Z", "+00:00"))
+        local = at.astimezone(ZoneInfo("America/Chicago"))
+        pub = local.date().isoformat()
+        text = p["text"].strip()
+        title = p.get("doc_title") or title_of(text)
+        url = f"https://www.linkedin.com/feed/update/urn:li:activity:{act}/"
+        body_rel = f"data/bodies/{iid}.md"
+        os.makedirs(os.path.join(ROOT, "data", "bodies"), exist_ok=True)
+        with open(os.path.join(ROOT, body_rel), "w") as f:
+            f.write(f"# {title}\n\n{pub} | {url}\n\n{text}\n")
+        images, social_day = [], None
+        if p["kind"] == "carousel":
+            slides = social_carousel(pub)
+            if slides:
+                social_day = pub
+                images = [repo_image_record(s, f"slide-{k}") for k, s in enumerate(slides, 1)]
+        if not images:
+            for im in p["images"]:
+                src = os.path.join(images_dir, im["file"])
+                if os.path.exists(src):
+                    images.append(image_record(src, f"media/linkedin/{iid}", im["role"], im.get("alt", ""),
+                                               im.get("cdn_path", "")))
+        link = p.get("link") or None
+        item = {
+            "id": iid,
+            "type": "post",
+            "post_kind": {"link_share": "article_share"}.get(p["kind"], p["kind"]),
+            "activity_urn": f"urn:li:activity:{act}",
+            "platform": "linkedin",
+            "title": title,
+            "url": url,
+            "published_date": pub,
+            "published_at": at.replace(microsecond=0).isoformat().replace("+00:00", "Z"),
+            "excerpt": excerpt_of(text),
+            "word_count": len(text.split()),
+            "body_path": body_rel,
+            "images": images,
+            "links": [link["url"]] if link and link.get("url") else [],
+            "link_preview": {"title": link.get("title", ""), "source": link.get("subtitle", "")} if link else None,
+            "source_social_date": social_day,
+            "metrics": dict(p["metrics"], as_of=meta.get("scraped_at", stamp)[:10]) if p.get("metrics") else None,
+            "tags": [],
+            "first_seen": stamp,
+            "last_scraped": stamp,
+        }
+        print(upsert(db, item), pub, item["post_kind"], len(images), "img", title[:60])
+    save(db)
+
+
 def validate():
     db = load()
     errs, ids = [], set()
@@ -167,6 +259,8 @@ if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else ""
     if cmd == "import-newsletter":
         import_newsletter(sys.argv[2], sys.argv[3])
+    elif cmd == "import-posts":
+        import_posts(sys.argv[2], sys.argv[3])
     elif cmd == "validate":
         sys.exit(0 if validate() else 1)
     elif cmd == "list":
