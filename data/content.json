@@ -1,0 +1,323 @@
+{
+  "schema_version": 1,
+  "updated": "2026-10-13T19:48:47Z",
+  "owner": {
+    "name": "John Head",
+    "profile_url": "https://www.linkedin.com/in/johndhead/"
+  },
+  "newsletters": [
+    {
+      "id": "7463333308307869696",
+      "name": "Head's Up - Enterprise AI",
+      "url": "https://www.linkedin.com/newsletters/head-s-up-enterprise-ai-7463333308307869696/"
+    }
+  ],
+  "items": [
+    {
+      "id": "li-article-everything-changes-after-26-years-cheers-john-50-john-head-fllkc",
+      "type": "newsletter_edition",
+      "edition_kind": "issue",
+      "issue_no": "04",
+      "newsletter_id": "7463333308307869696",
+      "platform": "linkedin",
+      "title": "Everything Changes after 26 Years. Cheers to John 5.0",
+      "url": "https://www.linkedin.com/pulse/everything-changes-after-26-years-cheers-john-50-john-head-fllkc/",
+      "published_date": "2026-09-17",
+      "excerpt": "Nine weeks since the last issue, and the delay is partially due to leaving the company where I had worked for quarter century.",
+      "word_count": 1585,
+      "body_path": "data/bodies/li-article-everything-changes-after-26-years-cheers-john-50-john-head-fllkc.md",
+      "images": [
+        {
+          "role": "cover",
+          "alt": "",
+          "width": 1280,
+          "height": 720,
+          "bytes": 106139,
+          "sha256": "13ec802aef900f6137dfe8277fec98ea44655da78c1f9fe5b554289c1477df20",
+          "path": "media/linkedin/li-article-everything-changes-after-26-years-cheers-john-50-john-head-fllkc/cover.jpg",
+          "url": "https://raw.githubusercontent.com/johndavidhead/headsup-social-images/main/media/linkedin/li-article-everything-changes-after-26-years-cheers-john-50-john-head-fllkc/cover.jpg",
+          "web_path": "media/linkedin/li-article-everything-changes-after-26-years-cheers-john-50-john-head-fllkc/cover-web.jpg",
+          "web_url": "https://raw.githubusercontent.com/johndavidhead/headsup-social-images/main/media/linkedin/li-article-everything-changes-after-26-years-cheers-john-50-john-head-fllkc/cover-web.jpg",
+          "web_width": 1100,
+          "web_height": 619,
+          "source_cdn_path": "https://media.licdn.com/dms/image/v2/D5612AQGhZiXR5m8nJg/article-cover_image-shrink_720_1280/B56aCwWtq8H0AY-/0/1789665139807"
+        }
+      ],
+      "tags": [],
+      "first_seen": "2026-10-13T19:48:46Z",
+      "last_scraped": "2026-10-13T19:48:46Z"
+    },
+    {
+      "id": "li-article-i-said-would-bet-against-chicago-quantum-july-reinforced-john-head-ghyhc",
+      "type": "newsletter_edition",
+      "edition_kind": "article",
+      "issue_no": null,
+      "newsletter_id": "7463333308307869696",
+      "platform": "linkedin",
+      "title": "I said I would not bet against Chicago on quantum. July reinforced my confidence.",
+      "url": "https://www.linkedin.com/pulse/i-said-would-bet-against-chicago-quantum-july-reinforced-john-head-ghyhc/",
+      "published_date": "2026-08-12",
+      "excerpt": "A month ago I spent a morning at the The Executives'​ Club of Chicago for The Quantum Leap event and wrote afterward that Chicago is making a serious bet on quantum and that I would not bet against it.",
+      "word_count": 1474,
+      "body_path": "data/bodies/li-article-i-said-would-bet-against-chicago-quantum-july-reinforced-john-head-ghyhc.md",
+      "images": [
+        {
+          "role": "cover",
+          "alt": "",
+          "width": 1280,
+          "height": 720,
+          "bytes": 1507041,
+          "sha256": "a902c93a2f7cfefdd3a4ebb40030ce569c89040bdb101f1091b62faaf93ebe7a",
+          "path": "media/linkedin/li-article-i-said-would-bet-against-chicago-quantum-july-reinforced-john-head-ghyhc/cover.jpg",
+          "url": "https://raw.githubusercontent.com/johndavidhead/headsup-social-images/main/media/linkedin/li-article-i-said-would-bet-against-chicago-quantum-july-reinforced-john-head-ghyhc/cover.jpg",
+          "web_path": "media/linkedin/li-article-i-said-would-bet-against-chicago-quantum-july-reinforced-john-head-ghyhc/cover-web.jpg",
+          "web_url": "https://raw.githubusercontent.com/johndavidhead/headsup-social-images/main/media/linkedin/li-article-i-said-would-bet-against-chicago-quantum-july-reinforced-john-head-ghyhc/cover-web.jpg",
+          "web_width": 1100,
+          "web_height": 619,
+          "source_cdn_path": "https://media.licdn.com/dms/image/v2/D5612AQGoK7TInK3I6A/article-cover_image-shrink_720_1280/B56Z_z0VPHKUAQ-/0/1786502013288"
+        }
+      ],
+      "tags": [],
+      "first_seen": "2026-10-13T19:48:46Z",
+      "last_scraped": "2026-10-13T19:48:46Z"
+    },
+    {
+      "id": "li-article-accountable-ai-you-cannot-see-john-head-qrctc",
+      "type": "newsletter_edition",
+      "edition_kind": "article",
+      "issue_no": null,
+      "newsletter_id": "7463333308307869696",
+      "platform": "linkedin",
+      "title": "Accountable for AI you cannot see",
+      "url": "https://www.linkedin.com/pulse/accountable-ai-you-cannot-see-john-head-qrctc/",
+      "published_date": "2026-08-03",
+      "excerpt": "Fact: 66% of CIOs and CTOs are held accountable for AI systems they do not fully control. [1]",
+      "word_count": 1416,
+      "body_path": "data/bodies/li-article-accountable-ai-you-cannot-see-john-head-qrctc.md",
+      "images": [
+        {
+          "role": "cover",
+          "alt": "IBM asked 2,000 technology executives who answers for AI when it ships from everywhere. The answers should change how you budget next year.",
+          "width": 1280,
+          "height": 720,
+          "bytes": 905050,
+          "sha256": "a22a94d81e75ee500e6a9ca779db6aa52e2ad6f26d0d626e0c8b79e10ba04621",
+          "path": "media/linkedin/li-article-accountable-ai-you-cannot-see-john-head-qrctc/cover.jpg",
+          "url": "https://raw.githubusercontent.com/johndavidhead/headsup-social-images/main/media/linkedin/li-article-accountable-ai-you-cannot-see-john-head-qrctc/cover.jpg",
+          "web_path": "media/linkedin/li-article-accountable-ai-you-cannot-see-john-head-qrctc/cover-web.jpg",
+          "web_url": "https://raw.githubusercontent.com/johndavidhead/headsup-social-images/main/media/linkedin/li-article-accountable-ai-you-cannot-see-john-head-qrctc/cover-web.jpg",
+          "web_width": 1100,
+          "web_height": 619,
+          "source_cdn_path": "https://media.licdn.com/dms/image/v2/D5612AQFLldZl9EXUeg/article-cover_image-shrink_720_1280/B56Z._z_35IcAQ-/0/1785629509403"
+        }
+      ],
+      "tags": [],
+      "first_seen": "2026-10-13T19:48:46Z",
+      "last_scraped": "2026-10-13T19:48:46Z"
+    },
+    {
+      "id": "li-article-real-bubble-both-john-head-vdocc",
+      "type": "newsletter_edition",
+      "edition_kind": "issue",
+      "issue_no": "03",
+      "newsletter_id": "7463333308307869696",
+      "platform": "linkedin",
+      "title": "Real, or a bubble? Both.",
+      "url": "https://www.linkedin.com/pulse/real-bubble-both-john-head-vdocc/",
+      "published_date": "2026-07-14",
+      "excerpt": "Five weeks where the models all updated, the prices went up, and everyone finally started asking whether the AI economy actually pays for itself.",
+      "word_count": 979,
+      "body_path": "data/bodies/li-article-real-bubble-both-john-head-vdocc.md",
+      "images": [
+        {
+          "role": "cover",
+          "alt": "",
+          "width": 1280,
+          "height": 720,
+          "bytes": 74680,
+          "sha256": "b56c4bb8725fa6d278544831806b5072eb4131863d12a2dec90243fd456902c4",
+          "path": "media/linkedin/li-article-real-bubble-both-john-head-vdocc/cover.jpg",
+          "url": "https://raw.githubusercontent.com/johndavidhead/headsup-social-images/main/media/linkedin/li-article-real-bubble-both-john-head-vdocc/cover.jpg",
+          "web_path": "media/linkedin/li-article-real-bubble-both-john-head-vdocc/cover-web.jpg",
+          "web_url": "https://raw.githubusercontent.com/johndavidhead/headsup-social-images/main/media/linkedin/li-article-real-bubble-both-john-head-vdocc/cover-web.jpg",
+          "web_width": 1100,
+          "web_height": 619,
+          "source_cdn_path": "https://media.licdn.com/dms/image/v2/D5612AQHFPe2US6LkXg/article-cover_image-shrink_720_1280/B56Z9eXEvdG8AQ-/0/1783994535273"
+        }
+      ],
+      "tags": [],
+      "first_seen": "2026-10-13T19:48:46Z",
+      "last_scraped": "2026-10-13T19:48:46Z"
+    },
+    {
+      "id": "li-article-ai-economy-real-bubble-honest-answer-both-john-head-b1rrc",
+      "type": "newsletter_edition",
+      "edition_kind": "article",
+      "issue_no": null,
+      "newsletter_id": "7463333308307869696",
+      "platform": "linkedin",
+      "title": "Is the AI economy real, or a bubble? The honest answer is both.",
+      "url": "https://www.linkedin.com/pulse/ai-economy-real-bubble-honest-answer-both-john-head-b1rrc/",
+      "published_date": "2026-07-09",
+      "excerpt": "Every board and executive I sit with asks a version of the same question. Is this real, or are we about to look foolish?",
+      "word_count": 1273,
+      "body_path": "data/bodies/li-article-ai-economy-real-bubble-honest-answer-both-john-head-b1rrc.md",
+      "images": [
+        {
+          "role": "cover",
+          "alt": "",
+          "width": 1280,
+          "height": 720,
+          "bytes": 57883,
+          "sha256": "5f126146ebf34fa404dc37174db61c876bedea6fb33dc191acb8b341ce9ffe0b",
+          "path": "media/linkedin/li-article-ai-economy-real-bubble-honest-answer-both-john-head-b1rrc/cover.jpg",
+          "url": "https://raw.githubusercontent.com/johndavidhead/headsup-social-images/main/media/linkedin/li-article-ai-economy-real-bubble-honest-answer-both-john-head-b1rrc/cover.jpg",
+          "web_path": "media/linkedin/li-article-ai-economy-real-bubble-honest-answer-both-john-head-b1rrc/cover-web.jpg",
+          "web_url": "https://raw.githubusercontent.com/johndavidhead/headsup-social-images/main/media/linkedin/li-article-ai-economy-real-bubble-honest-answer-both-john-head-b1rrc/cover-web.jpg",
+          "web_width": 1100,
+          "web_height": 619,
+          "source_cdn_path": "https://media.licdn.com/dms/image/v2/D5612AQGbxWX_ls3SXg/article-cover_image-shrink_720_1280/B56Z9IIwpeKEAQ-/0/1783621684086"
+        }
+      ],
+      "tags": [],
+      "first_seen": "2026-10-13T19:48:46Z",
+      "last_scraped": "2026-10-13T19:48:46Z"
+    },
+    {
+      "id": "li-article-your-ai-state-union-what-do-rest-year-john-head-wzroc",
+      "type": "newsletter_edition",
+      "edition_kind": "article",
+      "issue_no": null,
+      "newsletter_id": "7463333308307869696",
+      "platform": "linkedin",
+      "title": "Your AI state of the union, and what to do for the rest of the year",
+      "url": "https://www.linkedin.com/pulse/your-ai-state-union-what-do-rest-year-john-head-wzroc/",
+      "published_date": "2026-06-24",
+      "excerpt": "You sit on the board, or the executive team, of a mid-market company. Call it somewhere between $100 million and $1 billion in revenue. Real scale, real margins, no infinite budget.",
+      "word_count": 1765,
+      "body_path": "data/bodies/li-article-your-ai-state-union-what-do-rest-year-john-head-wzroc.md",
+      "images": [
+        {
+          "role": "cover",
+          "alt": "",
+          "width": 1280,
+          "height": 720,
+          "bytes": 137100,
+          "sha256": "db9c57e64233f3b5b43c89abe0372303cc124beb8732cfaba89c396a78146598",
+          "path": "media/linkedin/li-article-your-ai-state-union-what-do-rest-year-john-head-wzroc/cover.jpg",
+          "url": "https://raw.githubusercontent.com/johndavidhead/headsup-social-images/main/media/linkedin/li-article-your-ai-state-union-what-do-rest-year-john-head-wzroc/cover.jpg",
+          "web_path": "media/linkedin/li-article-your-ai-state-union-what-do-rest-year-john-head-wzroc/cover-web.jpg",
+          "web_url": "https://raw.githubusercontent.com/johndavidhead/headsup-social-images/main/media/linkedin/li-article-your-ai-state-union-what-do-rest-year-john-head-wzroc/cover-web.jpg",
+          "web_width": 1100,
+          "web_height": 619,
+          "source_cdn_path": "https://media.licdn.com/dms/image/v2/D5612AQFzN2q8Z_jdHw/article-cover_image-shrink_720_1280/B56Z72sZoZH4AQ-/0/1782255295585"
+        }
+      ],
+      "tags": [],
+      "first_seen": "2026-10-13T19:48:46Z",
+      "last_scraped": "2026-10-13T19:48:46Z"
+    },
+    {
+      "id": "li-article-rollout-real-john-head-5j4bc",
+      "type": "newsletter_edition",
+      "edition_kind": "issue",
+      "issue_no": "02",
+      "newsletter_id": "7463333308307869696",
+      "platform": "linkedin",
+      "title": "The rollout is real.",
+      "url": "https://www.linkedin.com/pulse/rollout-real-john-head-5j4bc/",
+      "published_date": "2026-06-11",
+      "excerpt": "Two weeks where Microsoft put agents on the org chart and the survey data said most companies are still warming up.",
+      "word_count": 1648,
+      "body_path": "data/bodies/li-article-rollout-real-john-head-5j4bc.md",
+      "images": [
+        {
+          "role": "cover",
+          "alt": "",
+          "width": 1280,
+          "height": 720,
+          "bytes": 70745,
+          "sha256": "c4e1264ec9821d7c439ada747e69ef4d6df5e07654588e4de95466d50a8a7cc9",
+          "path": "media/linkedin/li-article-rollout-real-john-head-5j4bc/cover.jpg",
+          "url": "https://raw.githubusercontent.com/johndavidhead/headsup-social-images/main/media/linkedin/li-article-rollout-real-john-head-5j4bc/cover.jpg",
+          "web_path": "media/linkedin/li-article-rollout-real-john-head-5j4bc/cover-web.jpg",
+          "web_url": "https://raw.githubusercontent.com/johndavidhead/headsup-social-images/main/media/linkedin/li-article-rollout-real-john-head-5j4bc/cover-web.jpg",
+          "web_width": 1100,
+          "web_height": 619,
+          "source_cdn_path": "https://media.licdn.com/dms/image/v2/D5612AQHMOOsevPfyzg/article-cover_image-shrink_720_1280/B56Z64Ges0HQAQ-/0/1781205167258"
+        }
+      ],
+      "tags": [],
+      "first_seen": "2026-10-13T19:48:46Z",
+      "last_scraped": "2026-10-13T19:48:46Z"
+    },
+    {
+      "id": "li-article-magnifica-humanitas-enterprise-ai-decision-maker-john-head-vqodc",
+      "type": "newsletter_edition",
+      "edition_kind": "article",
+      "issue_no": null,
+      "newsletter_id": "7463333308307869696",
+      "platform": "linkedin",
+      "title": "Magnifica Humanitas for the Enterprise AI Decision-Maker",
+      "url": "https://www.linkedin.com/pulse/magnifica-humanitas-enterprise-ai-decision-maker-john-head-vqodc/",
+      "published_date": "2026-05-28",
+      "excerpt": "I'm a practicing Polish Catholic. I sell enterprise AI for a living. This week those two parts of my life came head to head.",
+      "word_count": 1050,
+      "body_path": "data/bodies/li-article-magnifica-humanitas-enterprise-ai-decision-maker-john-head-vqodc.md",
+      "images": [
+        {
+          "role": "cover",
+          "alt": "AI created image - of course it is",
+          "width": 1280,
+          "height": 720,
+          "bytes": 1499581,
+          "sha256": "674b47a1fa58a2e32a58dfe1b79e7ecc9c0233c55ee1336e8a6edba4862110ad",
+          "path": "media/linkedin/li-article-magnifica-humanitas-enterprise-ai-decision-maker-john-head-vqodc/cover.jpg",
+          "url": "https://raw.githubusercontent.com/johndavidhead/headsup-social-images/main/media/linkedin/li-article-magnifica-humanitas-enterprise-ai-decision-maker-john-head-vqodc/cover.jpg",
+          "web_path": "media/linkedin/li-article-magnifica-humanitas-enterprise-ai-decision-maker-john-head-vqodc/cover-web.jpg",
+          "web_url": "https://raw.githubusercontent.com/johndavidhead/headsup-social-images/main/media/linkedin/li-article-magnifica-humanitas-enterprise-ai-decision-maker-john-head-vqodc/cover-web.jpg",
+          "web_width": 1100,
+          "web_height": 619,
+          "source_cdn_path": "https://media.licdn.com/dms/image/v2/D5612AQGeYMsKtfg0cQ/article-cover_image-shrink_720_1280/B56Z5suCmZGsAQ-/0/1779940471685"
+        }
+      ],
+      "tags": [],
+      "first_seen": "2026-10-13T19:48:46Z",
+      "last_scraped": "2026-10-13T19:48:46Z"
+    },
+    {
+      "id": "li-article-inaugural-issue-john-head-obcrc",
+      "type": "newsletter_edition",
+      "edition_kind": "issue",
+      "issue_no": "01",
+      "newsletter_id": "7463333308307869696",
+      "platform": "linkedin",
+      "title": "The Inaugural Issue",
+      "url": "https://www.linkedin.com/pulse/inaugural-issue-john-head-obcrc/",
+      "published_date": "2026-05-26",
+      "excerpt": "Welcome to Head's Up. John's take on Enterprise AI. Stories from the past two weeks.",
+      "word_count": 1542,
+      "body_path": "data/bodies/li-article-inaugural-issue-john-head-obcrc.md",
+      "images": [
+        {
+          "role": "cover",
+          "alt": "",
+          "width": 1280,
+          "height": 720,
+          "bytes": 80577,
+          "sha256": "20e7d2569847539b59460092995000740dec24e69dc3e0a1347fbb5291b06415",
+          "path": "media/linkedin/li-article-inaugural-issue-john-head-obcrc/cover.jpg",
+          "url": "https://raw.githubusercontent.com/johndavidhead/headsup-social-images/main/media/linkedin/li-article-inaugural-issue-john-head-obcrc/cover.jpg",
+          "web_path": "media/linkedin/li-article-inaugural-issue-john-head-obcrc/cover-web.jpg",
+          "web_url": "https://raw.githubusercontent.com/johndavidhead/headsup-social-images/main/media/linkedin/li-article-inaugural-issue-john-head-obcrc/cover-web.jpg",
+          "web_width": 1100,
+          "web_height": 619,
+          "source_cdn_path": "https://media.licdn.com/dms/image/v2/D5612AQFqNKk2eyL9hg/article-cover_image-shrink_720_1280/B56Z5MWRrUJIAQ-/0/1779397368883"
+        }
+      ],
+      "tags": [],
+      "first_seen": "2026-10-13T19:48:46Z",
+      "last_scraped": "2026-10-13T19:48:46Z"
+    }
+  ]
+}

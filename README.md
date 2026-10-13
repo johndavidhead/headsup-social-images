@@ -9,8 +9,9 @@ Public image host for Head's Up social posts. Postiz pulls each image from its r
 
 The repo root is also John's Head's Up link page, served by GitHub Pages at https://johndavidhead.github.io/headsup-social-images/.
 
-- `data/links.json` holds the content: daily posts, newsletter issues and special editions. Edit this file, never `index.html`.
-- `links/template.html` is the page design (Head's Up layer, cream). `links/assets/` holds the headshot and newsletter and article images.
-- `python3 tools/build_links.py` rebuilds `index.html` from the two. Commit both.
-- Daily post tiles reuse the cover image from that day's folder. An empty `url` falls back to John's LinkedIn profile (posts and articles) or the newsletter page (issues).
+- `data/content.json` is the content database: every newsletter issue and special edition, with full text in `data/bodies/` and images in `media/`. LinkedIn posts go here too. Schema and access in `data/README.md`.
+- `data/links.json` holds only the profile, headshot and daily post tiles. Never edit `index.html`.
+- `links/template.html` is the page design (Head's Up layer, cream). `links/assets/` holds the headshot.
+- `python3 tools/build_links.py` rebuilds `index.html` from the template, `links.json` and `content.json`. Commit them together.
+- Daily post tiles reuse the cover image from that day's folder. An empty post `url` falls back to John's LinkedIn profile.
 - `.nojekyll` makes GitHub serve the files as they are. If a custom domain is added later, GitHub writes a `CNAME` file here; never delete it.
