@@ -39,8 +39,38 @@ nl = {"subscribe": nlw["url"], "issues": [card(i, no=i["issue_no"]) for i in iss
 arts = sorted([i for i in eds if i["edition_kind"] == "article"], key=lambda i: i["published_date"], reverse=True)
 arts = [card(a) for a in arts]
 
-j = lambda o: json.dumps(o, ensure_ascii=False).replace("</", "<\\/")
-out = (tpl.replace("__POSTS__", j(posts)).replace("__NL__", j(nl)).replace("__ARTICLES__", j(arts))
+from html import escape as h
+
+def latest(p):
+    ex = f'<p class="ex">{h(p["excerpt"])}</p>' if p.get("excerpt") else ""
+    return (f'<a class="latest" id="latest" href="{h(p["url"])}" target="_blank" rel="noopener">'
+            f'<div class="im"><img src="{h(p["img"])}" alt="{h(p["title"])}"></div>'
+            f'<div class="tx"><div class="tg"><i></i><span class="lab">{h(p["tag"])}</span></div>'
+            f'<h2>{h(p["title"])}</h2>{ex}<div class="dt">{h(p["date"])}</div>'
+            f'<div class="go">Read my take on LinkedIn</div></div></a>')
+
+def tile(p):
+    return (f'<a class="tile" data-topic="{h(p["topic"])}" href="{h(p["url"])}" target="_blank" rel="noopener" '
+            f'aria-label="{h(p["title"])}, {h(p["date"])}"><img src="{h(p["img"])}" alt="" loading="lazy">'
+            f'<span class="cap"><span>{h(p["tag"])}</span><span>{h(p["date"])}</span></span></a>')
+
+def issue(i):
+    label = "Inaugural issue" if i["no"] in ("01", "1") and "inaugural" in i["title"].lower() else f'Issue {i["no"]}'
+    return (f'<a class="issue" href="{h(i["url"])}" target="_blank" rel="noopener">'
+            f'<div class="im"><img src="{h(i["img"])}" alt="" loading="lazy"></div>'
+            f'<span class="no">{h(label)} &middot; {h(i["date"])}</span><h3>{h(i["title"])}</h3></a>')
+
+def article(a):
+    im = (f'<div class="im"><img src="{h(a["img"])}" alt="" loading="lazy"></div>' if a["img"]
+          else '<div class="ph2"><span>Head&rsquo;s Up<b>.</b></span></div>')
+    return (f'<a class="art" href="{h(a["url"])}" target="_blank" rel="noopener">{im}'
+            f'<div class="tx"><span class="dt">{h(a["date"])}</span><h3>{h(a["title"])}</h3></div></a>')
+
+out = (tpl.replace("__LATEST__", latest(posts[0]) if posts else "")
+          .replace("__GRID__", "".join(tile(p) for p in posts))
+          .replace("__NL_URL__", h(nl["subscribe"]))
+          .replace("__ISSUES__", "".join(issue(i) for i in nl["issues"]))
+          .replace("__ARTICLES__", "".join(article(a) for a in arts))
           .replace("__HEADSHOT__", data["headshot"]))
 open(os.path.join(ROOT, "index.html"), "w").write(out)
 print("index.html:", len(posts), "posts,", len(issues), "issues,", len(arts), "articles")
