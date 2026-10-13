@@ -13,6 +13,12 @@ usage:
       Check every record against the rules in data/README.md and that every file exists.
   python3 tools/content_db.py list [type]
       Print one line per record, newest first.
+  python3 tools/content_db.py find <linkedin url>
+      Print the record for a LinkedIn article or post URL as JSON (exit 1 if it is not stored).
+  python3 tools/content_db.py add-article <url> <title> <YYYY-MM-DD> <text_file> [cover_image]
+      Upsert one newsletter special edition from its published URL and full text (used when the
+      article came from John rather than a Mac Chrome import). A later import-newsletter of the
+      same article replaces it, since both use the id li-article-<slug>.
 
 Other scripts can `import content_db` and call load(), upsert(db, item), save(db).
 """
@@ -231,6 +237,54 @@ def import_posts(meta_path, images_dir):
     save(db)
 
 
+def slug_of(url):
+    """LinkedIn pulse slug from an article URL, e.g. accountable-ai-you-cannot-see-john-head-qrctc."""
+    m = re.search(r"linkedin\.com/pulse/([^/?#]+)", url or "")
+    return m.group(1).strip("/") if m else ""
+
+
+def find(url):
+    """Stored record for a LinkedIn article or post URL, or None."""
+    db = load()
+    slug = slug_of(url)
+    clean = (url or "").split("?")[0].rstrip("/")
+    act = re.search(r"(activity|ugcPost|share)[:%3A]+(\d+)", url or "")
+    for i in db["items"]:
+        if slug and i["id"] == f"li-article-{slug}":
+            return i
+        if i.get("url", "").split("?")[0].rstrip("/") == clean:
+            return i
+        if act and act.group(2) in (i.get("activity_urn", "") + i.get("url", "")):
+            return i
+    return None
+
+
+def add_article(url, title, pub, text_file, cover=None):
+    slug = slug_of(url)
+    if not slug:
+        sys.exit("not a linkedin.com/pulse/ article URL: " + url)
+    datetime.date.fromisoformat(pub)
+    db = load()
+    text = open(text_file).read().strip()
+    iid = f"li-article-{slug}"
+    body_rel = f"data/bodies/{iid}.md"
+    os.makedirs(os.path.join(ROOT, "data", "bodies"), exist_ok=True)
+    with open(os.path.join(ROOT, body_rel), "w") as f:
+        f.write(f"# {title}\n\n{pub} | https://www.linkedin.com/pulse/{slug}/\n\n{text}\n")
+    images = [image_record(cover, f"media/linkedin/{iid}", "cover")] if cover and os.path.exists(cover) else []
+    stamp = now_iso()
+    item = {
+        "id": iid, "type": "newsletter_edition", "edition_kind": "article", "issue_no": None,
+        "newsletter_id": NEWSLETTER["id"], "platform": "linkedin", "title": title,
+        "url": f"https://www.linkedin.com/pulse/{slug}/", "published_date": pub,
+        "excerpt": excerpt_of(text), "word_count": len(text.split()), "body_path": body_rel,
+        "images": images, "tags": [], "first_seen": stamp, "last_scraped": stamp,
+        "source": "john_text",
+    }
+    print(upsert(db, item), pub, title)
+    save(db)
+
+
 def validate():
     db = load()
     errs, ids = [], set()
@@ -268,5 +322,12 @@ if __name__ == "__main__":
         for i in load()["items"]:
             if not t or i["type"] == t:
                 print(i["published_date"], i["type"], i.get("issue_no") or "", i["title"], len(i["images"]), "img")
+    elif cmd == "find":
+        rec = find(sys.argv[2])
+        if not rec:
+            sys.exit(1)
+        print(json.dumps(rec, ensure_ascii=False, indent=2))
+    elif cmd == "add-article":
+        add_article(*sys.argv[2:7])
     else:
         print(__doc__)

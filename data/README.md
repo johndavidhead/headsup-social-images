@@ -18,7 +18,7 @@ Write only through `tools/content_db.py` (or its `load` / `upsert` / `save` func
 data/content.json          the database
 data/bodies/<id>.md        full text of each record
 media/linkedin/<id>/       images for each record: originals plus a 1100px "-web.jpg" copy
-tools/content_db.py        import, upsert, validate, list
+tools/content_db.py        import, upsert, validate, list, find, add-article
 ```
 
 Images live in the repo because LinkedIn's CDN image URLs are signed and expire. `source_cdn_path` records where an image came from, without the signature.
@@ -90,3 +90,7 @@ LinkedIn's image CDN is not reachable from the cloud, so images come through Joh
 ## Refreshing posts
 
 From John's logged-in Mac Chrome, read `/voyager/api/identity/profileUpdatesV2?q=memberShareFeed` for his profile, download each post's images as `headsup-post-<activity id>-<role>.jpg` plus `headsup-posts-meta.json` (`{scraped_at, posts: [{activity_id, iso, kind, text, doc_title, link, metrics, images: [{role, width, height, alt, cdn_path, file}]}]}`), then run `python3 tools/content_db.py import-posts <meta.json> <images_dir>`. Upserts by `id`, so re-running refreshes metrics.
+
+## Adding one article from pasted text
+
+The `linkedin-article-social` skill uses two commands. `python3 tools/content_db.py find <linkedin url>` prints a stored item as JSON (exit 1 if missing); it matches by pulse slug, clean URL or activity id. `python3 tools/content_db.py add-article <url> <title> <YYYY-MM-DD> <text_file> [cover]` adds or updates `li-article-<slug>` with `source: "john_text"` and writes the body to `data/bodies/`. Then validate, rebuild the link page and commit.
