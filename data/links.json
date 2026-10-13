@@ -9,7 +9,15 @@
       "title": "Bank of America: $400M in AI, $800M back",
       "excerpt": "Bank of America CEO Brian Moynihan told a Barclays investor conference in September that about 140 AI uses cost the bank $400 million and are generating $800 million in benefit.",
       "img": "2026-10-13-ai/2026-10-13-ai-r1-carousel-1.png",
-      "url": ""
+      "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7515789358176645121",
+      "channels": {
+        "linkedin": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7515789358176645121",
+        "facebook": "https://www.facebook.com/122093829915517686/posts/122094389967517686",
+        "instagram": "https://www.instagram.com/p/DecNuWGG50M/",
+        "threads": "https://www.threads.com/@headsup_aiandquantum/post/DecPcR4G_v-",
+        "bluesky": "https://bsky.app/profile/did:plc:kjv27amjzuew3e5jliy4njxb/post/3mxri7caj3a2w"
+      },
+      "release_source": "postiz public API releaseURL"
     },
     {
       "date": "2026-10-12",
@@ -18,7 +26,15 @@
       "title": "Bill Gates sees AI cyberattack surprises within a year",
       "excerpt": "",
       "img": "2026-10-12-ai/2026-10-12-ai-r2-carousel-1.png",
-      "url": ""
+      "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7515426455250550784",
+      "channels": {
+        "linkedin": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7515426455250550784",
+        "facebook": "https://www.facebook.com/122093829915517686/posts/122093829909517686",
+        "instagram": "https://www.instagram.com/p/DeZZVvFG9e3/",
+        "threads": "https://www.threads.com/@headsup_aiandquantum/post/DeZxgR2nWLH",
+        "bluesky": "https://bsky.app/profile/did:plc:kjv27amjzuew3e5jliy4njxb/post/3mxoohmrvzz2r"
+      },
+      "release_source": "postiz public API releaseURL"
     }
   ]
 }
