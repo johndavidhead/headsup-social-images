@@ -57,11 +57,11 @@ def tile(p):
 def issue(i):
     label = "Inaugural issue" if i["no"] in ("01", "1") and "inaugural" in i["title"].lower() else f'Issue {i["no"]}'
     return (f'<a class="issue" href="{h(i["url"])}" target="_blank" rel="noopener">'
-            f'<div class="im"><img src="{h(i["img"])}" alt="" loading="lazy"></div>'
+            f'<div class="im"><img src="{h(i["img"])}" alt="{h(i["title"])} cover" loading="lazy"></div>'
             f'<span class="no">{h(label)} &middot; {h(i["date"])}</span><h3>{h(i["title"])}</h3></a>')
 
 def article(a):
-    im = (f'<div class="im"><img src="{h(a["img"])}" alt="" loading="lazy"></div>' if a["img"]
+    im = (f'<div class="im"><img src="{h(a["img"])}" alt="{h(a["title"])} cover" loading="lazy"></div>' if a["img"]
           else '<div class="ph2"><span>Head&rsquo;s Up<b>.</b></span></div>')
     return (f'<a class="art" href="{h(a["url"])}" target="_blank" rel="noopener">{im}'
             f'<div class="tx"><span class="dt">{h(a["date"])}</span><h3>{h(a["title"])}</h3></div></a>')
