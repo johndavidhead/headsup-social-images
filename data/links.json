@@ -1,0 +1,40 @@
+{
+  "profile_url": "https://www.linkedin.com/in/johndhead/",
+  "headshot": "links/assets/john-head.jpg",
+  "posts": [
+    {
+      "date": "2026-10-13",
+      "topic": "ai",
+      "tag": "Enterprise AI",
+      "title": "Bank of America: $400M in AI, $800M back",
+      "excerpt": "Bank of America CEO Brian Moynihan told a Barclays investor conference in September that about 140 AI uses cost the bank $400 million and are generating $800 million in benefit.",
+      "img": "2026-10-13-ai/2026-10-13-ai-r1-carousel-1.png",
+      "url": ""
+    },
+    {
+      "date": "2026-10-12",
+      "topic": "ai",
+      "tag": "Enterprise AI",
+      "title": "Bill Gates sees AI cyberattack surprises within a year",
+      "excerpt": "",
+      "img": "2026-10-12-ai/2026-10-12-ai-r2-carousel-1.png",
+      "url": ""
+    }
+  ],
+  "newsletter": {
+    "name": "Head's Up - Enterprise AI",
+    "url": "https://www.linkedin.com/newsletters/head-s-up-enterprise-ai-7463333308307869696/",
+    "issues": [
+      {"no": "04", "date": "2026-09-17", "title": "Everything Changes after 26 Years. Cheers to John 5.0", "img": "links/assets/newsletter/issue-04.jpg", "url": ""},
+      {"no": "03", "date": "2026-07-14", "title": "Real, or a bubble? Both.", "img": "links/assets/newsletter/issue-03.jpg", "url": ""},
+      {"no": "02", "date": "2026-06-11", "title": "The rollout is real.", "img": "links/assets/newsletter/issue-02.jpg", "url": ""},
+      {"no": "01", "date": "2026-05-26", "title": "The Inaugural Issue", "img": "links/assets/newsletter/issue-01.jpg", "url": "https://www.linkedin.com/pulse/inaugural-issue-john-head-obcrc/"}
+    ]
+  },
+  "articles": [
+    {"date": "2026-08-12", "title": "I said I would not bet against Chicago on quantum. July reinforced my confidence.", "img": "", "url": ""},
+    {"date": "2026-08-03", "title": "Accountable for AI you cannot see", "img": "links/assets/articles/accountable-for-ai-you-cannot-see.jpg", "url": ""},
+    {"date": "2026-07", "title": "Your AI state of the union, and what to do for the rest of the year", "img": "", "url": ""},
+    {"date": "2026-05-28", "title": "Magnifica Humanitas for the Enterprise AI Decision-Maker", "img": "", "url": ""}
+  ]
+}

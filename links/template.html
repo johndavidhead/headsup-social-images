@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Head's Up | John Head</title>
+<meta name="description" content="One story a day on enterprise AI and quantum, by John Head. Tap any post to read the full take on LinkedIn.">
+<meta name="color-scheme" content="light">
+<meta property="og:title" content="Head's Up | John Head">
+<meta property="og:description" content="One story a day on enterprise AI and quantum, by John Head. Tap any post for the full take on LinkedIn.">
+<meta property="og:image" content="links/assets/john-head.jpg">
+<meta name="theme-color" content="#f4f0e4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@500;600;700&display=swap">
+<style>
+/* Head's Up layer, cream theme: cream paper, navy ink, Illini Orange as shape only, square corners. */
+:root{
+  --cream:#f4f0e4; --paper:#faf8f1; --navy:#13294b; --ink:#0b0b0b; --body:#2a2a2a; --muted:#3a3a3a;
+  --rule:#1a1a1a; --line:rgba(19,41,75,.16); --orange:#ff5f05; --chip:rgba(19,41,75,.06);
+  --serif:"Source Serif 4",Georgia,serif; --sans:Inter,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{background:var(--cream)}
+body{margin:0;background:var(--cream);color:var(--navy);font-family:var(--serif);font-size:16px;line-height:1.45;-webkit-text-size-adjust:100%}
+a{color:inherit}
+.wrap{max-width:960px;margin:0 auto;padding:calc(20px + env(safe-area-inset-top,0px)) 16px calc(32px + env(safe-area-inset-bottom,0px))}
+.lab{font-family:var(--sans);font-weight:600;text-transform:uppercase;letter-spacing:.24em}
+
+/* Meta row */
+.meta{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:1px solid var(--rule);padding-bottom:12px}
+.meta .l{font-size:.68rem;color:var(--navy)}
+.meta .r{font-style:italic;font-size:.9rem;color:var(--muted);white-space:nowrap}
+@media (max-width:480px){.meta .r{display:none}}
+
+/* Header */
+header{padding:34px 0 26px;display:grid;gap:14px}
+.hd{display:grid;grid-template-columns:minmax(0,34%) minmax(0,1fr);gap:16px;align-items:stretch}
+.hdt{display:grid;gap:12px;align-content:center;min-width:0}
+.ph{position:relative;min-height:220px;border:1px solid var(--line);overflow:hidden}
+.hs{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%;display:block}
+.hd .wm{font-size:clamp(2.3rem,10.5vw,5.2rem)}
+.hd .by{font-size:clamp(.98rem,3.4vw,1.35rem)}
+@media (max-width:480px){.hd .btn{padding:0 14px;font-size:.66rem;letter-spacing:.12em;min-height:44px}.hd .socials{gap:4px 14px}.hd .socials a{font-size:.62rem}}
+@media (min-width:720px){.hd{grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:36px}}
+.wm{margin:0;font:700 clamp(3rem,13vw,5.2rem)/.95 var(--serif);letter-spacing:-.035em;color:var(--navy)}
+.wm b{color:var(--orange)}
+.by{margin:0;font:400 italic clamp(1.1rem,3.6vw,1.35rem)/1.35 var(--serif);color:var(--body);max-width:34ch}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 20px;font:700 .74rem var(--sans);text-transform:uppercase;letter-spacing:.16em;text-decoration:none;border:1.5px solid var(--navy);color:var(--navy);background:transparent}
+.btn.primary{background:var(--navy);color:var(--cream)}
+.btn:hover{background:var(--chip)} .btn.primary:hover{background:#0a1633}
+.btn svg{width:16px;height:16px;flex:0 0 auto}
+.socials{display:flex;gap:18px;flex-wrap:wrap;margin-top:4px}
+.socials a{font:600 .7rem var(--sans);text-transform:uppercase;letter-spacing:.16em;text-decoration:none;color:var(--navy);padding:6px 0;border-bottom:2px solid transparent}
+.socials a:hover{border-bottom-color:var(--orange)}
+
+/* Section heading with tag bar */
+.sec{display:flex;align-items:center;gap:12px;margin:8px 0 14px}
+.sec i{width:6px;height:22px;background:var(--orange)}
+.sec span{font-size:.78rem;font-weight:700;color:var(--navy)}
+
+/* Latest */
+.latest{display:grid;grid-template-columns:minmax(0,1fr);gap:0;border:1px solid var(--line);background:var(--paper);text-decoration:none;color:inherit}
+.latest .im{aspect-ratio:4/5;background:var(--chip);overflow:hidden}
+.latest img{width:100%;height:100%;object-fit:cover;display:block}
+.latest .tx{padding:20px 20px 22px;display:grid;gap:10px;align-content:start}
+.latest .tg{display:flex;align-items:center;gap:10px}
+.latest .tg i{width:5px;height:16px;background:var(--orange)}
+.latest .tg span{font-size:.66rem;font-weight:700}
+.latest h2{margin:0;font:700 clamp(1.5rem,5vw,2.1rem)/1.08 var(--serif);letter-spacing:-.02em;color:var(--ink);text-wrap:balance}
+.latest .ex{margin:0;color:var(--body);font-size:1.02rem;max-width:44ch}
+.latest .dt{font-style:italic;color:var(--muted);font-size:.95rem}
+.latest .go{margin-top:6px;font:700 .72rem var(--sans);text-transform:uppercase;letter-spacing:.16em;color:var(--navy)}
+.latest .go::after{content:" \2192"}
+.latest:hover h2{text-decoration:underline;text-decoration-color:var(--orange);text-decoration-thickness:3px;text-underline-offset:5px}
+@media (min-width:720px){.latest{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.latest .tx{padding:34px 32px;align-content:center}}
+
+/* Filters */
+.filters{display:flex;gap:4px 16px;flex-wrap:wrap;border-bottom:1px solid var(--line);margin:34px 0 18px}
+.filters button{font:600 .66rem var(--sans);text-transform:uppercase;letter-spacing:.14em;padding:12px 0 13px;border:0;border-bottom:3px solid transparent;margin-bottom:-1px;background:none;color:var(--muted);cursor:pointer}
+.filters button[aria-pressed="true"]{color:var(--navy);border-bottom-color:var(--orange)}
+.filters .n{margin-left:6px;color:var(--orange);font-variant-numeric:tabular-nums}
+
+/* Grid */
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.tile{position:relative;display:block;aspect-ratio:4/5;overflow:hidden;background:var(--paper);text-decoration:none;outline:1px solid var(--line);outline-offset:-1px}
+.tile::after{content:"";position:absolute;inset:0;border:1px solid var(--line);pointer-events:none}
+.tile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .25s ease}
+.tile:hover img{transform:scale(1.03)}
+.tile .cap{position:absolute;left:0;right:0;bottom:0;padding:22px 8px 7px;background:linear-gradient(transparent,rgba(19,41,75,.82));color:var(--cream);font:600 .58rem var(--sans);text-transform:uppercase;letter-spacing:.12em;display:flex;justify-content:space-between;gap:6px;opacity:0;transition:opacity .2s}
+.tile:hover .cap,.tile:focus-visible .cap{opacity:1}
+.tile .smp{position:absolute;top:6px;right:6px;font:700 .52rem var(--sans);letter-spacing:.14em;text-transform:uppercase;background:var(--cream);color:var(--navy);padding:3px 6px}
+@media (hover:none){.tile .cap{opacity:1}}
+@media (min-width:720px){.grid{gap:10px}.tile .cap{font-size:.62rem;padding:28px 12px 10px}}
+a:focus-visible,button:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+.empty{padding:28px;text-align:center;font-style:italic;color:var(--muted);border:1px dashed var(--line)}
+
+
+
+/* Newsletter: navy band, the design system's dark promo ground */
+.nl{margin-top:44px;background:var(--navy);color:var(--cream);padding:28px 16px 30px;display:grid;gap:16px}
+.nl .sec{margin:0}.nl .sec span{color:var(--orange)}
+.sh{margin:0;font:700 clamp(1.7rem,6vw,2.6rem)/1.05 var(--serif);letter-spacing:-.02em;text-wrap:balance}
+.nl .sh{color:var(--cream)}
+.nl .lead{margin:0;font-style:italic;color:#d9d3c2;max-width:52ch}
+.btn.light{background:var(--cream);color:var(--navy);border-color:var(--cream);justify-self:start;min-height:44px}
+.btn.light:hover{background:#fff}
+.igrid{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;margin-top:6px}
+.issue{display:grid;gap:10px;text-decoration:none;color:inherit;position:relative}
+.issue .im{aspect-ratio:16/9;overflow:hidden;background:rgba(244,240,228,.08);border:1px solid rgba(244,240,228,.25)}
+.issue img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .25s ease}
+.issue:hover img{transform:scale(1.02)}
+.issue .no{font:700 .62rem var(--sans);text-transform:uppercase;letter-spacing:.18em;color:var(--orange)}
+.issue h3{margin:0;font:700 1.2rem/1.2 var(--serif);color:var(--cream)}
+.issue:hover h3{text-decoration:underline;text-decoration-color:var(--orange);text-underline-offset:4px}
+.smp2{position:absolute;top:8px;right:8px;font:700 .52rem var(--sans);letter-spacing:.14em;text-transform:uppercase;background:var(--cream);color:var(--navy);padding:3px 6px}
+@media (min-width:640px){.igrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}}
+@media (min-width:720px){.nl{padding:40px 40px 42px}}
+
+/* Articles */
+.ar{margin-top:44px;display:grid;gap:14px}
+.ar .sh{color:var(--ink)}
+.ar .lead{margin:0;font-style:italic;color:var(--body);max-width:52ch}
+.agrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:6px}
+.art{position:relative;display:grid;grid-template-rows:auto 1fr;text-decoration:none;color:inherit;background:var(--paper);border:1px solid var(--line)}
+.art .im{aspect-ratio:16/9;overflow:hidden;background:var(--chip)}
+.art .im img{width:100%;height:100%;object-fit:cover;display:block}
+.art .ph2{aspect-ratio:16/9;background:var(--navy);display:flex;align-items:flex-end;padding:12px}
+.art .ph2 span{font:700 1.2rem/1 var(--serif);color:var(--cream)} .art .ph2 b{color:var(--orange)}
+.art .tx{padding:12px 12px 14px;display:grid;gap:6px;align-content:start}
+.art .dt{font:600 .58rem var(--sans);text-transform:uppercase;letter-spacing:.16em;color:var(--muted)}
+.art h3{margin:0;font:700 1rem/1.2 var(--serif);color:var(--ink)}
+.art:hover h3{text-decoration:underline;text-decoration-color:var(--orange);text-underline-offset:4px}
+@media (min-width:720px){.agrid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.art h3{font-size:1.12rem}}
+/* Footer */
+footer{margin-top:40px;border-top:1px solid var(--rule);padding-top:18px;display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+footer .fw{font:700 1.6rem/1 var(--serif);letter-spacing:-.02em;color:var(--navy)} footer .fw b{color:var(--orange)}
+footer .fs{font:600 .62rem var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--navy);margin-top:6px}
+footer p{margin:0;font-style:italic;color:var(--muted);font-size:.92rem}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="meta"><span class="l lab">Head&rsquo;s Up &middot; John&rsquo;s take on AI &amp; Quantum</span><span class="r">One story a day</span></div>
+
+  <header>
+    <div class="hd"><div class="ph"><img class="hs" src="__HEADSHOT__" alt="John Head" width="400" height="600"></div><div class="hdt">
+    <h1 class="wm">Head&rsquo;s Up<b>.</b></h1>
+    <p class="by">One story a day on enterprise AI and quantum, by John Head. Tap any post for my full take on LinkedIn.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://www.linkedin.com/in/johndhead/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.8v1.5h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1v5.45h-4v-4.83c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.91h-4v-11Z"/></svg>Follow John on LinkedIn</a>
+    </div>
+    <nav class="socials" aria-label="Head's Up on other networks">
+      <a href="https://www.facebook.com/HeadsUpAIQuantum/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/headsup_aiandquantum/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.threads.net/@headsup_aiandquantum" target="_blank" rel="noopener">Threads</a>
+      <a href="https://bsky.app/profile/headsupaiquantum.bsky.social" target="_blank" rel="noopener">Bluesky</a>
+    </nav>
+    </div></div>
+  </header>
+
+  <div class="sec"><i></i><span class="lab">Latest</span></div>
+  <a class="latest" id="latest" target="_blank" rel="noopener"></a>
+
+  <div class="filters" role="group" aria-label="Filter posts">
+    <button data-f="all" aria-pressed="true">All<span class="n"></span></button>
+    <button data-f="ai" aria-pressed="false">Enterprise AI<span class="n"></span></button>
+    <button data-f="quantum" aria-pressed="false">Quantum<span class="n"></span></button>
+    <button data-f="weekend" aria-pressed="false">Weekend<span class="n"></span></button>
+  </div>
+  <div class="grid" id="grid"></div>
+
+
+
+  <section class="nl" aria-labelledby="nl-h">
+    <div class="sec"><i></i><span class="lab">The newsletter</span></div>
+    <h2 class="sh" id="nl-h">Head&rsquo;s Up - Enterprise AI</h2>
+    <p class="lead">A read for leaders deploying AI at scale, every two weeks on LinkedIn. What shipped, what broke and what to do about it.</p>
+    <a class="btn light" id="nl-sub" target="_blank" rel="noopener">Subscribe on LinkedIn</a>
+    <div class="igrid" id="igrid"></div>
+  </section>
+
+  <section class="ar" aria-labelledby="ar-h">
+    <div class="sec"><i></i><span class="lab">Articles</span></div>
+    <h2 class="sh" id="ar-h">Special editions</h2>
+    <p class="lead">Longer pieces I've published on LinkedIn outside the numbered issues.</p>
+    <div class="agrid" id="agrid"></div>
+  </section>
+  <footer>
+    <div><div class="fw">Head&rsquo;s Up<b>.</b></div><div class="fs">John Head &middot; Enterprise AI &amp; Quantum</div></div>
+    <p>New post every morning. Full take on LinkedIn.</p>
+  </footer>
+</div>
+
+<script>
+const POSTS=__POSTS__;
+const LI="https://www.linkedin.com/in/johndhead/";
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const href=p=>p.url||LI;
+const L=POSTS[0];
+const la=document.getElementById("latest");
+la.href=href(L);
+la.innerHTML=`<div class="im"><img src="${L.img}" alt="${esc(L.title)}"></div><div class="tx"><div class="tg"><i></i><span class="lab">${esc(L.tag)}</span></div><h2>${esc(L.title)}</h2>${L.excerpt?`<p class="ex">${esc(L.excerpt)}</p>`:""}<div class="dt">${esc(L.date)}</div><div class="go">Read my take on LinkedIn</div></div>`;
+let f="all";
+function draw(){
+  const g=document.getElementById("grid");
+  const list=POSTS.filter(p=>f==="all"||p.topic===f);
+  g.innerHTML=list.length?list.map(p=>`<a class="tile" href="${esc(href(p))}" target="_blank" rel="noopener" aria-label="${esc(p.title)}, ${esc(p.date)}"><img src="${p.img}" alt="" loading="lazy">${p.sample?'<span class="smp">Sample</span>':''}<span class="cap"><span>${esc(p.tag)}</span><span>${esc(p.date)}</span></span></a>`).join(""):'<div class="empty">No posts here yet.</div>';
+  document.querySelectorAll(".filters button").forEach(b=>{b.setAttribute("aria-pressed",b.dataset.f===f);const n=b.dataset.f==="all"?POSTS.length:POSTS.filter(p=>p.topic===b.dataset.f).length;b.querySelector(".n").textContent=n});
+}
+document.querySelectorAll(".filters button").forEach(b=>b.addEventListener("click",()=>{f=b.dataset.f;draw()}));
+draw();
+
+
+const NL=__NL__;
+document.getElementById("nl-sub").href=NL.subscribe||LI;
+document.getElementById("igrid").innerHTML=NL.issues.map(i=>`<a class="issue" href="${esc(i.url||LI)}" target="_blank" rel="noopener"><div class="im"><img src="${i.img}" alt="" loading="lazy"></div>${i.sample?'<span class="smp2">Sample</span>':''}<span class="no">Issue ${esc(i.no)} &middot; ${esc(i.date)}</span><h3>${esc(i.title)}</h3></a>`).join("");
+const ARTICLES=__ARTICLES__;
+document.getElementById("agrid").innerHTML=ARTICLES.map(a=>`<a class="art" href="${esc(a.url||LI)}" target="_blank" rel="noopener">${a.img?`<div class="im"><img src="${a.img}" alt="" loading="lazy"></div>`:'<div class="ph2"><span>Head&rsquo;s Up<b>.</b></span></div>'}${a.sample?'<span class="smp2">Sample</span>':''}<div class="tx"><span class="dt">${esc(a.date)}</span><h3>${esc(a.title)}</h3></div></a>`).join("");
+</script>
+</body>
+</html>
