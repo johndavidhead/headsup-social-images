@@ -3,6 +3,23 @@
   "headshot": "links/assets/john-head.jpg",
   "posts": [
     {
+      "date": "2026-10-14",
+      "topic": "quantum",
+      "tag": "Quantum",
+      "title": "D-Wave's annealer cut SkyWater fab delays up to 30%",
+      "excerpt": "D-Wave says its quantum annealer cut lot delays at SkyWater's Minnesota chip fab by up to 30% by optimizing the fab's maintenance schedule.",
+      "img": "2026-10-14-quantum/2026-10-14-quantum-r1-carousel-1.png",
+      "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7516166283730567168",
+      "channels": {
+        "bluesky": "https://bsky.app/profile/did:plc:kjv27amjzuew3e5jliy4njxb/post/3mxtxtspdtp2l",
+        "facebook": "https://www.facebook.com/122093829915517686/posts/122094992547517686",
+        "instagram": "https://www.instagram.com/p/Dee0PrOmhA_/",
+        "linkedin": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7516166283730567168",
+        "threads": "https://www.threads.com/@headsup_aiandquantum/post/Dee0PBhml95"
+      },
+      "release_source": "postiz public API releaseURL"
+    },
+    {
       "date": "2026-10-13",
       "topic": "ai",
       "tag": "Enterprise AI",
