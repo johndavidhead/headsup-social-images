@@ -3,6 +3,23 @@
   "headshot": "links/assets/john-head.jpg",
   "posts": [
     {
+      "date": "2026-10-15",
+      "topic": "ai",
+      "tag": "Enterprise AI",
+      "title": "Citi's AI coding push cut tech vendor spend 30%",
+      "excerpt": "Citi cut its technology vendor spend 30% year over year, and Jane Fraser tied the drop to AI on the bank's third quarter earnings call this week.",
+      "img": "2026-10-15-ai/2026-10-15-ai-r1-carousel-1.png",
+      "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7516573984247681025",
+      "channels": {
+        "facebook": "https://www.facebook.com/122093829915517686/posts/122095640265517686",
+        "threads": "https://www.threads.com/@headsup_aiandquantum/post/Dehr5gQD-wy",
+        "linkedin": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7516573984247681025",
+        "instagram": "https://www.instagram.com/p/Dehr6XuD12X/",
+        "bluesky": "https://bsky.app/profile/did:plc:kjv27amjzuew3e5jliy4njxb/post/3mxwrjftfii2l"
+      },
+      "release_source": "postiz public API releaseURL"
+    },
+    {
       "date": "2026-10-14",
       "topic": "quantum",
       "tag": "Quantum",
