@@ -3,6 +3,19 @@
   "headshot": "links/assets/john-head.jpg",
   "posts": [
     {
+      "date": "2026-10-16",
+      "topic": "ai",
+      "tag": "Enterprise AI",
+      "title": "Workday wants AI agents paid from your labor budget",
+      "excerpt": "Workday told investors in Las Vegas this week that it wants its AI agents paid for out of customers' staffing and outsourcing budgets, and billed on usage instead of per employee.",
+      "img": "2026-10-16-ai/2026-10-16-ai-r1-carousel-1.png",
+      "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7516876311009628160",
+      "channels": {
+        "linkedin": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7516876311009628160"
+      },
+      "release_source": "postiz public API releaseURL"
+    },
+    {
       "date": "2026-10-15",
       "topic": "ai",
       "tag": "Enterprise AI",
