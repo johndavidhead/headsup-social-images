@@ -12,7 +12,10 @@
       "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7516876311009628160",
       "channels": {
         "linkedin": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7516876311009628160",
-        "facebook": "https://www.facebook.com/122093829915517686/posts/122096314017517686"
+        "facebook": "https://www.facebook.com/122093829915517686/posts/122096314017517686",
+        "threads": "https://www.threads.com/@headsup_aiandquantum/post/DekBqlXmqjF",
+        "instagram": "https://www.instagram.com/p/DekBTnjCS7N/",
+        "bluesky": "https://bsky.app/profile/did:plc:kjv27amjzuew3e5jliy4njxb/post/3mxz2ifdr4k2b"
       },
       "release_source": "postiz public API releaseURL"
     },
